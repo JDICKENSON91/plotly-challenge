@@ -66,3 +66,8 @@ Now that all my functions were created I can task them to my change event. When 
 I created my Init Function for mydrop down on the HTML page.
 
 ![init Function](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/8%20-%20Init%20Function.PNG?raw=true)
+
+
+This was deployed to Git Pages and displayed at https://jdickenson91.github.io/plotly-challenge/
+
+![init Function](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/webpage.PNG?raw=true)
