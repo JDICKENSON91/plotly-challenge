@@ -6,8 +6,8 @@ function CreateCharts (id) {
             console.log(data)
 
             //Get the washing frequency.
-            var washfreq = data.metadata.map(d => d.washfreq)
-            console.log(`Washing Freq: ${washfreq}`)
+            //var washfreq = data.metadata.map(d => d.washfreq)
+            //console.log(`Washing Freq: ${washfreq}`)
 
             //Create the filter to filter the data.
             var samples = data.samples.filter(s => s.id.toString() === id)[0];
@@ -131,6 +131,8 @@ function init() {
             dropdown.append("option").text(name).property("value");
         });
 
+
+        
         //Call the fuction to make the change and update the info on page
         CreateCharts(data.names[0]);
         GetDemoInfo(data.names[0]);
