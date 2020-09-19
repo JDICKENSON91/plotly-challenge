@@ -1,79 +1,68 @@
-## Plotly Homework - Belly Button Biodiversity
+# Plotly Homework - Belly Button Biodiversity
 
-For this assignment i was tasked with building an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels.
+For this assignment i was tasked with building an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonise human navels.
 
 The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
-# Step 1: Use the D3 library to read in the sample file.
+## Step 1: Use the D3 library to read in the sample file.
 
-I used the 'd3.json' to import the "samples.json" file
+1. I used the 'd3.json' to import the "samples.json" file.
 
 ![Importing JSON file](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/1%20-%20Import.PNG?raw=true)
 
-2. Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
+## Step 2: Creating The Bar Chart.
+### Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
 
-* Use `sample_values` as the values for the bar chart.
+1. I created a Filter to filter the data based on the SelectionChange function. 
+2. Then I used the slicing code to get the top 10 OTU's.
+3. I used the reverse function to get them in the right order.
+4. I did this for both the Samples Values and OTU ID's.
 
-* Use `otu_ids` as the labels for the bar chart.
+![Filtering Data](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/2%20-%20Filter.PNG?raw=true)
 
-* Use `otu_labels` as the hovertext for the chart.
+5. I created the trace for the plot and assign the Sample value to the X variable and OTU ID codes to the Y variable.
+6. I assigned that trace to a variable "databar".
+7. I coded the layout and assigned it to a variable "layoutbar".
+8. I used Plotly to assign my variables "databar" and "layoutbar" to create my bar plot.
 
-  ![bar Chart](Images/hw01.png)
+![Creating Bar Plot](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/3%20-%20Create%20Bar%20Chart.PNG?raw=true)
 
-3. Create a bubble chart that displays each sample.
+## Step 3: Creating The Bubble Chart.
+### Create a bubble chart that displays each sample.
 
-* Use `otu_ids` for the x values.
+1. I used the same variables to get the correct filters as the above.
+2. I created the trace for the bubble plot and assign the Sample value to the X variable and OTU ID codes to the Y variable.
+3. I assigned that trace to a variable "databubble".
+4. I coded the layout and assigned it to a variable "layoutbubble".
+5. I used Plotly to assign my variables "databubble" and "layoutbubble" to create my bubble plot.
 
-* Use `sample_values` for the y values.
+![Creating Bar Plot](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/4%20-%20Create%20Bubble%20Chart.PNG?raw=true)
 
-* Use `sample_values` for the marker size.
+## Step 4: Creating The Chart Function.
 
-* Use `otu_ids` for the marker colors.
+I wrapped the above code as a function to be called when the selection is changed.
 
-* Use `otu_labels` for the text values.
+![Charting Function](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/5%20-%20Chart%20function.PNG?raw=true)
 
-![Bubble Chart](Images/bubble_chart.png)
+## Step 5: Creating The Demographic Information Table.
 
-4. Display the sample metadata, i.e., an individual's demographic information.
+1. I imported the data from the JSON File again.
+2. I assigned the Demographic metadata to a variable.
+3. I set the filter to filter on the ID Selected byu the SelectionChange function.
+4. The DemoInfo Panel will empty / reset itself upon each change.
+5. The DemoInfo Panel will then append based on the filter ID and pull in the Key pairs from the MetaData.
+6. This was all wrapped up in a GetDemoInfo Function based on the ID in the selection.
 
-5. Display each key-value pair from the metadata JSON object somewhere on the page.
+![Demo Info](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/6%20-%20Demographic%20Info.PNG?raw=true)
 
-![hw](Images/hw03.png)
+## Step 6: Pulling it all together with a Change Event.
 
-6. Update all of the plots any time that a new sample is selected.
+Now that all my functions were created I can task them to my change event. When the SelectionChanged function is updated the CreateCharts and GetDemoInfo will update with the selected ID
 
-Additionally, you are welcome to create any layout that you would like for your dashboard. An example dashboard is shown below:
+![Change Event](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/7%20-%20Change%20Event.PNG?raw=true)
 
-![hw](Images/hw02.png)
+## Step 7: Create Initiate Function
 
-## Advanced Challenge Assignment (Optional)
+I created my Init Function for mydrop down on the HTML page.
 
-The following task is advanced and therefore optional.
-
-* Adapt the Gauge Chart from <https://plot.ly/javascript/gauge-charts/> to plot the weekly washing frequency of the individual.
-
-* You will need to modify the example gauge code to account for values ranging from 0 through 9.
-
-* Update the chart whenever a new sample is selected.
-
-![Weekly Washing Frequency Gauge](Images/gauge.png)
-
-## Deployment
-
-* Deploy your app to a free static page hosting service, such as GitHub Pages. Submit the links to your deployment and your GitHub repo.
-
-* Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
-
-## Hints
-
-* Use `console.log` inside of your JavaScript code to see what your data looks like at each step.
-
-* Refer to the [Plotly.js documentation](https://plot.ly/javascript/) when building the plots.
-
-### About the Data
-
-Hulcr, J. et al.(2012) _A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable_. Retrieved from: [http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/)
-
-- - -
-
-© 2019 Trilogy Education Services
+![init Function](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/8%20-%20Init%20Function.PNG?raw=true)
