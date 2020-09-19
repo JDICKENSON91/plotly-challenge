@@ -57,16 +57,17 @@ I wrapped the above code as a function to be called when the selection is change
 
 ## Step 6: Pulling it all together with a Change Event.
 
-Now that all my functions were created I can task them to my change event. When the SelectionChanged function is updated the CreateCharts and GetDemoInfo will update with the selected ID
+Now that all my functions were created I can task them to my change event. When the SelectionChanged function is updated the CreateCharts and GetDemoInfo will update with the selected ID.
 
 ![Change Event](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/7%20-%20Change%20Event.PNG?raw=true)
 
-## Step 7: Create Initiate Function
+## Step 7: Create Initiate Function.
 
 I created my Init Function for mydrop down on the HTML page.
 
 ![init Function](https://github.com/JDICKENSON91/plotly-challenge/blob/master/Images/8%20-%20Init%20Function.PNG?raw=true)
 
+## Step 8: Deployment.
 
 This was deployed to Git Pages and displayed at https://jdickenson91.github.io/plotly-challenge/
 
